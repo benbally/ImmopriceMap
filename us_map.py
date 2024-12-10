@@ -14,7 +14,7 @@ import requests
 
 # Downloading file from drive and loading it 
 file_id = "1OGzPeaompHartaP1diAIXmdJTiOEc_eX"
-url = f"https://drive.google.com/uc?id=<file_id>&export=download"
+url = f"https://drive.google.com/uc?id=<file_id>&export=download&confirm=t"
 response = requests.get(url)
 with open("USA-data.zip.csv", "wb") as f:
     f.write(response.content)
