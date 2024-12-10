@@ -19,6 +19,10 @@ response = requests.get(url)
 with open("USA-data.zip.csv", "wb") as f:
     f.write(response.content)
 df = pd.read_csv("USA-data.zip.csv")
+st.write("Spalten im Datensatz:", df.columns)
+st.write("Erste Zeilen des Datensatzes:")
+st.write(df.head())
+
 
 # Top 20 US cities
 largest_cities = [
