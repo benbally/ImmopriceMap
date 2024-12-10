@@ -12,11 +12,13 @@ import folium
 import streamlit as st
 import requests
 
-
-#Load data set
-data_path = "/Users/benjaminbally/desktop/usa_data.csv"
-df = pd.read_csv(data_path)
-
+# Downloading file from drive and loading it 
+id = "1Nti1mwt83vV8Tl4k8koXuR9ugSYKDOol"
+url = f"https://drive.google.com/uc?id={id}"
+response = requests.get(url)
+with open("usa_data.csv", "wb") as f:
+    f.write(response.content)
+df = pd.read_csv("usa_data.csv")
 
 # Top 20 US cities
 largest_cities = [
