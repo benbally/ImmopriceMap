@@ -13,12 +13,12 @@ import streamlit as st
 import requests
 
 # Downloading file from drive and loading it 
-file_id = "1Nti1mwt83vV8Tl4k8koXuR9ugSYKDOol"
+file_id = "1OGzPeaompHartaP1diAIXmdJTiOEc_eX"
 url = f"https://drive.google.com/uc?id={file_id}"
 response = requests.get(url)
-with open("usa_data.csv", "wb") as f:
+with open("USA-data.zip.csv", "wb") as f:
     f.write(response.content)
-df = pd.read_csv("usa_data.csv")
+df = pd.read_csv("USA-data.zip.csv")
 
 # Top 20 US cities
 largest_cities = [
