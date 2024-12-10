@@ -13,8 +13,7 @@ import streamlit as st
 import requests
 
 # Downloading file from drive and loading it 
-file_id = "1OGzPeaompHartaP1diAIXmdJTiOEc_eX"
-url = f"https://drive.google.com/uc?id=<file_id>&export=download&confirm=t"
+url = f"https://www.dropbox.com/scl/fi/rhh1vj1ex844onfggscew/USA-data.zip.csv?rlkey=xdjaa7rp9ohgsu3letxjthps8&dl=1"
 response = requests.get(url)
 with open("USA-data.zip.csv", "wb") as f:
     f.write(response.content)
